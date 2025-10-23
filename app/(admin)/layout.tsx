@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Box from "@mui/material/Box"
 import Sidebar from "@/components/layout/mainlayout/sidebar/Sidebar"
-import Header from "@/components/layout/mainlayout/header/Header"
+//import Header from "@/components/layout/mainlayout/header/Header"
 
 export default function DashboardLayout({
     children,
@@ -32,7 +32,7 @@ export default function DashboardLayout({
                     transition: { xl: "margin-left 300ms cubic-bezier(0.4, 0, 0.2, 1), margin-right 300ms cubic-bezier(0.4, 0, 0.2, 1)" }
                 }}
             >
-                <Header onToggleSidebar={toggleSidebar}/>
+                {/* <Header onToggleSidebar={toggleSidebar}/> */}
                 <Box
                     sx={{
                         paddingY: "24px",
