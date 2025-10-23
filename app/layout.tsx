@@ -1,4 +1,5 @@
 'use client'
+import React from 'react';
 
 import type { Metadata } from "next";
 import AppTheme from "@/themes/AppTheme";
@@ -6,13 +7,13 @@ import CssBaseline from "@mui/material/CssBaseline";
 
 export default function RootLayout({
     children,
-}: Readonly<{
+}: {
     children: React.ReactNode;
-}>, props: { disableCustomTheme?: boolean }) {
+}) {
     return (
         <html lang="en">
             <body>
-                <AppTheme {...props}>
+                <AppTheme>
                     <CssBaseline />
                     {children}
                 </AppTheme>
