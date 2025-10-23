@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Box from "@mui/material/Box"
 import Sidebar from "@/components/layout/mainlayout/sidebar/Sidebar"
-import Header from "@/components/layout/mainlayout/header/header"
+import Header from "@/components/layout/mainlayout/header/Header"
 
 export default function DashboardLayout({
     children,
