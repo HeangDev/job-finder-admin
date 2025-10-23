@@ -40,7 +40,7 @@ function ElevationScroll(props: ElevationProps) {
     : null;
 }
 
-export default function Header({ onToggleSidebar, window }: HeaderProps) {
+const Header = ({ onToggleSidebar, window }: HeaderProps) => {
     const pathname = usePathname();
     const pathnames = pathname.split("/").filter((x) => x);
 
@@ -110,3 +110,5 @@ export default function Header({ onToggleSidebar, window }: HeaderProps) {
         </>
     )
 }
+
+export default Header
