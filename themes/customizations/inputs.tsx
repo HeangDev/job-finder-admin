@@ -1,4 +1,5 @@
-import type { Theme, Components, alpha } from '@mui/material'
+import type { Theme, Components } from '@mui/material'
+import { alpha } from "@mui/material/styles";
 import { outlinedInputClasses } from '@mui/material/OutlinedInput';
 
 export const inputsCustomizations: Components<Theme> = {
@@ -15,30 +16,50 @@ export const inputsCustomizations: Components<Theme> = {
                 padding: "0",
             },
             root: ({ theme }) => ({
-                padding: "8px 12px",
+                width: "100%",
+                padding: "10px 14px",
                 fontSize: "12px",
+                fontWeight: 500,
                 color: (theme.vars || theme).palette.text.primary,
                 borderRadius: (theme.vars || theme).shape.borderRadius,
-                outline: `1px solid ${(theme.vars || theme).palette.divider}`,
                 backgroundColor: (theme.vars || theme).palette.background.default,
                 transition: "outline 120ms ease-in",
-                "&:hover": {
-                    outline: "1px solid",
-                },
                 variants: [
                     {
                         props: {
                             size: "small",
                         },
-                        style: {
-                            height: "34px"
-                        }
                     },
                 ]
             }),
             notchedOutline: {
                 border: "none"
             }
+        }
+    },
+    MuiInputLabel: {
+        styleOverrides: {
+            root: ({ theme }) => ({
+                position: "relative",
+                maxWidth: "100%",
+                marginBottom: "6px",
+                fontSize: "12px",
+                fontWeight: 500,
+                color: (theme.vars || theme).palette.text.primary,
+                transform: "none",
+            })
+        }
+    },
+    MuiFormHelperText: {
+        styleOverrides: {
+            root: ({ theme }) => ({
+                width: "100%",
+                marginTop: "6px",
+                marginLeft: 0,
+                marginRight: 0,
+                fontSize: "12px",
+                color: (theme.vars || theme).palette.error.main,
+            })
         }
     },
     MuiIconButton: {
@@ -69,7 +90,9 @@ export const inputsCustomizations: Components<Theme> = {
     MuiButton: {
         styleOverrides: {
             root: ({ theme }) => ({
-                padding: "6px 16px",
+                display: "flex",
+                gap: 2,
+                padding: "8px 12px",
                 fontSize: "12px",
                 fontWeight: 700,
                 color: (theme.vars || theme).palette.text.primary,
@@ -77,7 +100,7 @@ export const inputsCustomizations: Components<Theme> = {
                 minWidth: "64px",
                 boxShadow: "none",
                 borderRadius: (theme.vars || theme).shape.borderRadius,
-                backgroundColor: (theme.vars || theme).palette.background.paper,
+                backgroundColor: (theme.vars || theme).palette.background.default,
                 textTransform: "none",
                 variants: [
                     {
@@ -88,7 +111,40 @@ export const inputsCustomizations: Components<Theme> = {
                             height: "36px",
                         }
                     },
-                ]
+                    {
+                        props: { color: "primary" },
+                        style: ({ theme }) => ({
+                            backgroundColor: (theme.vars || theme).palette.info.main,
+                            color: (theme.vars || theme).palette.light.main,
+                            "&:hover": {
+                                backgroundColor: alpha(theme.palette.info.main, 0.8)
+                            },
+                        }),
+                    },
+                    {
+                        props: { color: "error" },
+                        style: ({ theme }) => ({
+                            backgroundColor: (theme.vars || theme).palette.error.main,
+                            color: (theme.vars || theme).palette.light.main,
+                            "&:hover": {
+                                backgroundColor: alpha(theme.palette.error.main, 0.8)
+                            },
+                        }),
+                    },
+                    {
+                        props: { color: "success" },
+                        style: ({ theme }) => ({
+                            backgroundColor: (theme.vars || theme).palette.success.main,
+                            color: (theme.vars || theme).palette.light.main,
+                            "&:hover": {
+                                backgroundColor: alpha(theme.palette.success.main, 0.8)
+                            },
+                        }),
+                    },
+                ],
+                '&:hover': {
+                    boxShadow: "none",
+                },
             })
         }
     }

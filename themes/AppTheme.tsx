@@ -5,6 +5,7 @@ import { inputsCustomizations } from './customizations/inputs';
 import { surfacesCustomizations } from './customizations/surfaces';
 import { dataDisplayCustomizations } from './customizations/dataDisplay';
 import { navigationCustomizations } from './customizations/navigation';
+import { utilsCustomizations } from './customizations/utils';
 import { colorSchemes, typography, shape, breakpoints, shadows } from './themePrimitives';
 
 interface AppThemeProps {
@@ -32,6 +33,7 @@ export default function AppTheme(props: AppThemeProps) {
                 ...surfacesCustomizations,
                 ...dataDisplayCustomizations,
                 ...navigationCustomizations,
+                ...utilsCustomizations,
             }
         })
     }, [disableCustomTheme, themeComponents])

@@ -109,7 +109,7 @@ export const dataDisplayCustomizations: Components<Theme> = {
         styleOverrides: {
             root: ({theme}) => {
                 return {
-                    padding: "12px 24px",
+                    padding: "10px 24px",
                     fontSize: "12px",
                     fontWeight: 600,
                     lineHeight: 1.5,
