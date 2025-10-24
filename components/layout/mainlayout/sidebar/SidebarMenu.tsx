@@ -7,16 +7,19 @@ export const navData = [
                 icon: 'solar:database-bold-duotone',
                 href: '/dashboard'
             },
-            {
-                label: 'Analytics',
-                icon: 'solar:chart-square-bold-duotone',
-                href: '/analytics'
-            },
         ]
     },
     {
         header: "Pages",
         items: [
+            {
+                label: 'Customer',
+                icon: "solar:users-group-two-rounded-bold", 
+                subMenu: [
+                    { label: 'Customer List', href: 'list' },
+                    { label: 'Customer Create', href: 'create' },
+                ]
+            },
             {
                 label: 'User Management',
                 icon: "solar:user-bold-duotone", 
@@ -24,6 +27,15 @@ export const navData = [
                     { label: 'Users', href: 'users' },
                     { label: 'Roles', href: 'roles' },
                     { label: 'Permissions', href: 'permissions' }
+                ]
+            },
+            {
+                label: 'Subscriptions',
+                icon: "solar:folder-open-bold-duotone", 
+                subMenu: [
+                    { label: 'Subscriptions', href: 'subscription' },
+                    { label: 'Plans', href: 'plans' },
+                    { label: 'Payments', href: 'payments' },
                 ]
             },
         ]
@@ -38,11 +50,6 @@ export const navData = [
                     { label: 'Products', href: 'reports/products' },
                     { label: 'Sales', href: 'reports/sales' }
                 ]
-            },
-            {
-                label: 'Subscription',
-                icon: 'solar:folder-open-bold-duotone',
-                href: '/subscription'
             },
             {
                 label: 'Settings',

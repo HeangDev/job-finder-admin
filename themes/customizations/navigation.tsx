@@ -53,5 +53,25 @@ export const navigationCustomizations: Components<Theme> = {
                 }
             }
         }
+    },
+    MuiMenu: {
+        styleOverrides: {
+            paper: ({ theme }) => {
+                return {
+                    paddingTop: "12px",
+                    paddingBottom: "12px",
+                    borderRadius: (theme.vars || theme).shape.borderRadius,
+                }
+            },
+        }
+    },
+    MuiMenuItem: {
+        styleOverrides: {
+            root: ({ theme }) => {
+                return {
+                    padding: "2px 16px 0 16px"
+                }
+            }
+        }
     }
 }  

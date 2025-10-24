@@ -216,26 +216,34 @@ export default function DataTable ({
                                 </TableCell>
                             ))}
                         </TableRow>
-                    </TableHead>
+                    </TableHead> 
                     <TableBody>
-                        {visibleRows.map((row) => {
-                        const rowId = getRowId(row);
-                            return (
-                                <TableRow key={rowId}>
-                                    {columns.map(
-                                        (column) => visibleCols.includes(column.id) && (
-                                            <TableCell
-                                                key={column.id}
-                                                align={column.numeric ? "right" : "left"}
-                                                sx={{ minWidth: column.minWidth || 120 }}
-                                            >
-                                                {column.render ? column.render(row) : row[column.id]}
-                                            </TableCell>
-                                        )
-                                    )}
-                                </TableRow>
-                            );
-                        })}
+                        {rows.length === 0 ? (
+                            <TableRow>
+                                <TableCell colSpan={visibleCols.length || columns.length} sx={{ textAlign: "center" }}>
+                                    <Typography variant="body2" color="text.secondary">No data available in table</Typography>
+                                </TableCell>
+                            </TableRow>
+                        ) : (
+                            visibleRows.map((row) => {
+                            const rowId = getRowId(row);
+                                return (
+                                    <TableRow key={rowId}>
+                                        {columns.map(
+                                            (column) => visibleCols.includes(column.id) && (
+                                                <TableCell
+                                                    key={column.id}
+                                                    align={column.numeric ? "right" : "left"}
+                                                    sx={{ minWidth: column.minWidth || 120 }}
+                                                >
+                                                    {column.render ? column.render(row) : row[column.id]}
+                                                </TableCell>
+                                            )
+                                        )}
+                                    </TableRow>
+                                );
+                            })
+                        )}
                     </TableBody> 
                 </Table>
                 <Stack    

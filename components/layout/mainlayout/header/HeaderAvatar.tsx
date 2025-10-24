@@ -26,6 +26,11 @@ const HeaderAvatar = () => {
             >
                 <Avatar alt="Sim Kimheang" src="https://demos.creative-tim.com/material-dashboard-pro-react/static/media/team-3.0ef0be95e6850814c79e.jpg" />
             </IconButton>
+            <Menu>
+                <MenuItem onClick={handleClose}>Language</MenuItem>
+                <MenuItem onClick={handleClose}>Account Settings</MenuItem>
+                <MenuItem onClick={handleClose}>Sign Out</MenuItem>
+            </Menu>
         </>
     )
 }
